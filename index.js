@@ -14,3 +14,8 @@ function showEmailError() {
   emailError.className = "error active";
 };
 
+function showZipCodeError() {
+  if (zipCode.validity.valueMissing) {
+    zipCodeError.textContent = "You need to enter a zip code.";
+  }
+};
