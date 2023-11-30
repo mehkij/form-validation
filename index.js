@@ -1,8 +1,37 @@
 const form = document.querySelector("form");
 const email = document.getElementById("mail");
+const country = document.getElementById("country");
 const zipCode = document.getElementById("zip");
+const password = document.getElementById("password");
+const confirmation = document.getElementById("confirmation");
+
 const emailError = document.querySelector("#mail + span.error");
+const countryError = document.querySelector("#country + span.error");
 const zipCodeError = document.querySelector("#zip + span.error");
+const passError = document.querySelector("#password + span.error");
+const confirmError = document.querySelector("#confirmation + span.error");
+
+function showMissingValueError() {
+  if (email.validity.valueMissing) {
+    emailError.textContent = "You need to enter an email address.";
+  }
+
+  if (country.validity.valueMissing) {
+    countryError.textContent = "You need to enter a country.";
+  }
+
+  if (zipCode.validity.valueMissing) {
+    zipCodeError.textContent = "You need to enter a zip code.";
+  }
+
+  if (password.validity.valueMissing) {
+    passError.textContent = "You need to enter a password.";
+  }
+
+  if (confirmation.validity.valueMissing) {
+    confirmError.textContent = "Please confirm your password.";
+  }
+};
 
 function showEmailError() {
   if (email.validity.valueMissing) {
