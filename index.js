@@ -31,6 +31,15 @@ email.addEventListener("input", (event) => {
   }
 });
 
+zipCode.addEventListener("input", (event) => {
+  if (zipCode.validity.valid) {
+    zipCodeError.textContent = "";
+    zipCodeError.className = "error";
+  } else {
+    showZipCodeError();
+  }
+});
+
 form.addEventListener("submit", (event) => {
   if (!email.validity.valid) {
     showEmailError();
