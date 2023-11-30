@@ -45,4 +45,9 @@ form.addEventListener("submit", (event) => {
     showEmailError();
     event.preventDefault();
   }
+
+  if (!zipCode.validity.valid) {
+    showZipCodeError();
+    event.preventDefault();
+  }
 });
